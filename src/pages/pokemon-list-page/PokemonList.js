@@ -3,7 +3,7 @@ import Container from 'components/layouts/container/Container';
 import PokemonList from 'components/pokemon-list/PokemonList';
 import { fetchPokemon } from 'redux/pokemon/pokemon.action';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 const PokemonListPage = () => {
   const dispatch = useDispatch();
@@ -11,7 +11,7 @@ const PokemonListPage = () => {
 
   useEffect(() => {
     dispatch(fetchPokemon());
-  }, []);
+  });
   return (
     <Container>
       <PokemonList></PokemonList>

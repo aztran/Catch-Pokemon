@@ -1,16 +1,18 @@
 import React from 'react';
-import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+
+    * {
+      box-sizing: border-box;
+    }
      body {
         background: #fff;
         color: #4b4c4c;
         font-weight: 400;
         font-size: 12px;
         line-height: 1.4;
-        font-family: gothamLight;
-        text-rendering: optimizeLegibility;
-        -webkit-font-smoothing: antialiased;
+        font-family: sans-serif;
         overflow: hidden;
         margin: 0;
         padding: 0;
@@ -28,6 +30,66 @@ const GlobalStyle = createGlobalStyle`
         grid-gap: 1rem;
     }
 
+    .fz24{
+      font-size: 24px;
+    }
+
+    .fz20{
+      font-size: 20px;
+    }
+
+    .fz18{
+      font-size: 18px;
+    }
+
+    .fz14{
+      font-size: 14px;
+    }
+
+    .fz12{
+      font-size: 12px;
+    }
+
+    .fz11{
+      font-size: 11px;
+    }
+
+    .fz10{
+      font-size: 10px;
+    }
+
+    .mb1{
+      margin-bottom: 1em;
+    }
+
+    .mb2{
+      margin-bottom: 2em;
+    }
+
+    .mb25px{
+      margin-bottom: 25px;
+    }
+
+    .mb10px{
+      margin-bottom: 10px;
+    }
+
+    .mb5px{
+      margin-bottom: 5px;
+    }
+
+    .mr1{
+      margin-right: 1em;
+    }
+
+    .fbold {
+      font-weight: bold;
+    }
+
+    .fNormal {
+      font-weight: normal;
+    }
+
    
 
     @media (min-width: 600px) {
@@ -42,29 +104,11 @@ const GlobalStyle = createGlobalStyle`
 
 `;
 
-const theme = {
-  colors: {
-    whiteDop: '#f0f0f0',
-    lightGrey: '#a6a6a6',
-    lightGrey2: '#9b9b9b',
-    darkGrey: '#646464',
-    cyan: '#009ddc',
-    darkBlue: '#0066b3',
-    cornflowerblue: 'cornflowerblue'
-  },
-  fonts: ['sans-serif', 'Roboto'],
-  fontSizes: {
-    small: '1em',
-    medium: '2em',
-    large: '3em'
-  }
-};
-
 const Theme = ({ children }) => (
-  <ThemeProvider theme={theme}>
+  <React.Fragment>
     <GlobalStyle />
     {children}
-  </ThemeProvider>
+  </React.Fragment>
 );
 
 export default Theme;

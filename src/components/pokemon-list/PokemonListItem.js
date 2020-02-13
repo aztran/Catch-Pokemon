@@ -4,15 +4,21 @@ import {
   PokemonName,
   OwnedItem
 } from './PokemonListItem.style';
+import { withRouter } from 'react-router-dom';
 
-const PokemonListItem = ({ data, ...props }) => {
+const PokemonListItem = ({ data, history, match, ...props }) => {
   const { name } = data;
+
+  const redirectToDetail = () => {
+    // console.log(match);
+    history.push(`/detail/${name}`);
+  };
   return (
-    <PokemonListItemContainer {...props}>
+    <PokemonListItemContainer {...props} onClick={() => redirectToDetail()}>
       <PokemonName>{name}</PokemonName>
-      <OwnedItem>0</OwnedItem>
+      <OwnedItem>Total Owned : 0</OwnedItem>
     </PokemonListItemContainer>
   );
 };
 
-export default PokemonListItem;
+export default withRouter(PokemonListItem);

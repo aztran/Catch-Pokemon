@@ -4,4 +4,7 @@ export const ContainerLayout = styled.div`
   padding: 20px 40px;
   overflow: scroll;
   height: 100vh;
+  ${'' /* display: flex;
+  flex-flow: column;
+  align-items: center; */}
 `;

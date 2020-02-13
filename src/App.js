@@ -1,9 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
+
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Header from 'components/layouts/header/Header';
-import PokemonListPage from 'pages/PokemonList';
+import PokemonListPage from 'pages/pokemon-list-page/PokemonList';
+import PokemonDetailPage from 'pages/pokemon-detail-page/PokemonDetail';
 import Theme from 'components/Theme';
 
 const pokemonList = props => {
@@ -14,12 +15,11 @@ function App() {
   return (
     <Theme>
       <Header />
-      <BrowserRouter>
-        <Switch>
-          {/* <Route exact path='/' components={PokemonList} /> */}
-          <Route exact path='/' render={props => pokemonList(props)} />
-        </Switch>
-      </BrowserRouter>
+      <Switch>
+        {/* <Route exact path='/' components={PokemonList} /> */}
+        <Route exact path='/' render={props => pokemonList(props)} />
+        <Route path='/detail/:name' component={PokemonDetailPage} />
+      </Switch>
     </Theme>
   );
 }

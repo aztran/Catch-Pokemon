@@ -5,10 +5,9 @@ export const PokemonListItemContainer = styled.div`
 
   display: flex;
   justify-content: space-between;
-  ${'' /* margin: 12px 12px; */}
 
   &:hover {
-    background: gray;
+    border-bottom: 3px solid cornflowerblue;
     cursor: pointer;
   }
 `;
