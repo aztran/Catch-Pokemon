@@ -97,6 +97,10 @@ const GlobalStyle = createGlobalStyle`
     .bg-orange {
       background-color: orange
     };
+
+    .bg-yellow {
+      background-color: #ffcb07;
+    }
     
     .cl-white {
       color: white;

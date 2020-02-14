@@ -1,13 +1,15 @@
 export const addPokemon = (pokemon, pokemonToAdd, name) => {
-  const existingPokemon = pokemon.find(data => data.id === pokemonToAdd.id);
-  console.log(existingPokemon);
 
-  //   if (existingPokemon) {
-  //     return pokemon.map(pokemon =>
-  //       pokemon.id === pokemonToAdd.id
-  //         ? { ...pokemon, quantity: pokemon.quantity + 1 }
-  //         : pokemon
-  //     );
-  //   }
-  return [...pokemon, { ...pokemonToAdd, quantity: 1, ownedName: name }];
+  return [...pokemon, { ...pokemonToAdd, ownedName: name }];
 };
+
+
+export const removePokemon = (pokemons, nameToRemove) => {
+  // const existingPokemon = pokemons.find(
+  //   pokemon => pokemon.ownedName.pokeName === nameToRemove
+  // )
+  console.log(nameToRemove, 'name')
+
+  return pokemons.filter(pokemon => pokemon.ownedName !== nameToRemove);
+  // console.log(existingPokemon)
+}

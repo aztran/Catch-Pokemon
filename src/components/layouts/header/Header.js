@@ -4,13 +4,16 @@ import {
   HeaderContainer,
   LogoContainer,
   MenuContainer,
-  MenuItem
+  MenuItem,
+  Logo
 } from './Header.style';
+
+import icon from 'assets/img/icon.png'
 
 const Header = () => {
   return (
     <HeaderContainer>
-      <LogoContainer>{/* <Logo src={logo} /> */}</LogoContainer>
+      <LogoContainer><Logo src={icon} /></LogoContainer>
       <MenuContainer>
         <MenuItem to='/'>Pokemon List</MenuItem>
         <MenuItem to='/my-pokemon'>My Pokemon</MenuItem>

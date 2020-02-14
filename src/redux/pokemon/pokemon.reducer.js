@@ -1,11 +1,8 @@
 import pokemonTypes from './pokemon.types';
-import { addPokemon } from 'utils';
+import { addPokemon, removePokemon } from 'utils';
 const initialState = {
   isFetching: false,
   isFetchingSingle: false,
-  // SelectedPokemonLoading: true,
-  message: null,
-  total: 0,
   pokemons: null,
   pokemonSingle: null,
   ownedPokemon: [],
@@ -33,7 +30,7 @@ const pokemonReducer = (state = initialState, action) => {
         isFetching: false,
         pokemons: payload.results,
         nextUrl: payload.next,
-        prevUrl: payload.prev,
+        prevUrl: payload.previous,
         total: payload.count
       };
     case pokemonTypes.FETCH_POKEMON_SUCCESS:
@@ -51,6 +48,16 @@ const pokemonReducer = (state = initialState, action) => {
           action.name
         )
       };
+    case pokemonTypes.RELEASE_POKEMON:
+      return {
+        ...state,
+        ownedPokemon: removePokemon(state.ownedPokemon, action.payload)
+      };
+    case pokemonTypes.RELEASE_ALL:
+      return {
+        ...state,
+        ownedPokemon: []
+      }
     default:
       return state;
   }

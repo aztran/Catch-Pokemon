@@ -15,4 +15,10 @@ export const PokemonButton = styled.button`
   color: white;
   font-weight: 800;
   font-size: 15px;
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.3);
 `;
+
+export const BaseButton = styled.button`
+  padding: 20px;
+  
+`

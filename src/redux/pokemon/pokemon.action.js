@@ -10,18 +10,19 @@ export const fetchPokemonStart = () => ({
   type: pokemonTypes.FETCH_POKEMON_START
 });
 
-export const fetchPokemon = () => async dispatch => {
+export const fetchPokemon = (url = null) => async dispatch => {
   dispatch(fetchPokemonsStart());
 
   try {
-    const resp = await axios.get(config.baseUrl);
+    let newUrl = url ? url : config.baseUrl
+    const resp = await axios.get(newUrl);
     const { data } = resp;
 
     dispatch({
       type: pokemonTypes.FETCH_POKEMONS_SUCCESS,
       payload: data
     });
-  } catch (error) {}
+  } catch (error) { }
 };
 
 export const fetchPokemonDetail = name => async dispatch => {
@@ -29,18 +30,24 @@ export const fetchPokemonDetail = name => async dispatch => {
   try {
     const resp = await axios.get(`${config.baseUrl}/${name}`);
     const { data, status } = resp;
-    console.log(resp);
     if (status === 200) {
-      // console.log(data);
       dispatch({
         type: pokemonTypes.FETCH_POKEMON_SUCCESS,
         payload: data
       });
     }
-  } catch (error) {}
+  } catch (error) { }
 };
 
 export const catchPokemon = (item, name) => dispatch => {
-  console.log(name);
   dispatch({ type: pokemonTypes.CATCH_POKEMON, payload: item, name: name });
 };
+
+export const releasePokemon = (name) => dispatch => {
+  dispatch({ type: pokemonTypes.RELEASE_POKEMON, payload: name });
+};
+export const releaseAll = () => dispatch => {
+  dispatch({ type: pokemonTypes.RELEASE_ALL });
+};
+
+

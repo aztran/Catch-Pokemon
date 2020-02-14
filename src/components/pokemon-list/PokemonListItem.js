@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   PokemonListItemContainer,
   PokemonName,
@@ -12,20 +12,14 @@ const PokemonListItem = ({ data, history, match, ...props }) => {
 
   const { ownedPokemon } = useSelector(state => state.pokemon);
 
-  useEffect(() => {
-    if (ownedPokemon) {
-      console.log(ownedPokemon, 's');
-    }
-  }, [ownedPokemon]);
-
-  let totalOwned =
+  let total =
     ownedPokemon.length > 0
       ? ownedPokemon.filter(pokemon => {
-          return pokemon.name === name ? true : false;
-        })
+        return pokemon.name === name ? true : false;
+      })
       : 0;
-  totalOwned = totalOwned.length > 0 ? totalOwned.length : 0;
-  // console.log(totalOwned.length);
+  total = total.length > 0 ? total.length : 0;
+
   const redirectToDetail = () => {
     history.push(`/detail/${name}`);
   };
@@ -33,7 +27,7 @@ const PokemonListItem = ({ data, history, match, ...props }) => {
   return (
     <PokemonListItemContainer {...props} onClick={() => redirectToDetail()}>
       <PokemonName>{name}</PokemonName>
-      <OwnedItem>Total Owned : {totalOwned}</OwnedItem>
+      <OwnedItem>Total Owned : {total}</OwnedItem>
     </PokemonListItemContainer>
   );
 };

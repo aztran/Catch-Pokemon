@@ -1,7 +1,7 @@
 import React from 'react';
 import { PokemonButton, PokemonButtonWrapper } from './Button.style';
 
-const Button = ({ children, ...props }) => {
+const ButtonPokemon = ({ children, ...props }) => {
   return (
     <PokemonButtonWrapper>
       <PokemonButton {...props}>{children}</PokemonButton>
@@ -9,4 +9,4 @@ const Button = ({ children, ...props }) => {
   );
 };
 
-export default Button;
+export default ButtonPokemon;

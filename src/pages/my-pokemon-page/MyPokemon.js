@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import OwnedPokemon from 'components/owned-pokemon/OwnedPokemon';
 
 const MyPokemon = () => {
   const { ownedPokemon } = useSelector(state => state.pokemon);
   useEffect(() => {
     console.log(ownedPokemon);
-  }, []);
-  return <div></div>;
+  }, [ownedPokemon]);
+  return <OwnedPokemon data={ownedPokemon} />;
 };
 
 export default MyPokemon;
