@@ -19,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
 
     }
     a {
-        color: white;
+        color: #173f77;
         text-decoration: none;
     }
 
@@ -30,15 +30,15 @@ const GlobalStyle = createGlobalStyle`
         grid-gap: 1rem;
     }
 
-    .fz24{
+    .fz24 {
       font-size: 24px;
     }
 
-    .fz20{
+    .fz20 {
       font-size: 20px;
     }
 
-    .fz18{
+    .fz18 {
       font-size: 18px;
     }
 
@@ -46,39 +46,39 @@ const GlobalStyle = createGlobalStyle`
       font-size: 14px;
     }
 
-    .fz12{
+    .fz12 {
       font-size: 12px;
     }
 
-    .fz11{
+    .fz11 {
       font-size: 11px;
     }
 
-    .fz10{
+    .fz10 {
       font-size: 10px;
     }
 
-    .mb1{
+    .mb1 {
       margin-bottom: 1em;
     }
 
-    .mb2{
+    .mb2 {
       margin-bottom: 2em;
     }
 
-    .mb25px{
-      margin-bottom: 25px;
+    .mt1 {
+      margin-top: 1em;
+    }
+    
+    .mt2 {
+      margin-top: 2em;
     }
 
-    .mb10px{
-      margin-bottom: 10px;
+    .mt3 {
+      margin-top: 3em;
     }
 
-    .mb5px{
-      margin-bottom: 5px;
-    }
-
-    .mr1{
+    .mr1 {
       margin-right: 1em;
     }
 
@@ -88,6 +88,22 @@ const GlobalStyle = createGlobalStyle`
 
     .fNormal {
       font-weight: normal;
+    }
+
+    .bg-red {
+      background-color: red;
+    }
+
+    .bg-orange {
+      background-color: orange
+    };
+    
+    .cl-white {
+      color: white;
+    }
+
+    .cl-black {
+      color: black;
     }
 
    

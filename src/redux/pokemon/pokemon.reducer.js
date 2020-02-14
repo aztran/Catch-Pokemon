@@ -1,5 +1,5 @@
 import pokemonTypes from './pokemon.types';
-
+import { addPokemon } from 'utils';
 const initialState = {
   isFetching: false,
   isFetchingSingle: false,
@@ -7,7 +7,8 @@ const initialState = {
   message: null,
   total: 0,
   pokemons: null,
-  pokemonSingle: {},
+  pokemonSingle: null,
+  ownedPokemon: [],
   nextUrl: null,
   prevUrl: null,
   currentPage: 1
@@ -40,6 +41,15 @@ const pokemonReducer = (state = initialState, action) => {
         ...state,
         isFetchingSingle: false,
         pokemonSingle: payload
+      };
+    case pokemonTypes.CATCH_POKEMON:
+      return {
+        ...state,
+        ownedPokemon: addPokemon(
+          state.ownedPokemon,
+          action.payload,
+          action.name
+        )
       };
     default:
       return state;

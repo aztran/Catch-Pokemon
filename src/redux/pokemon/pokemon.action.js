@@ -29,7 +29,7 @@ export const fetchPokemonDetail = name => async dispatch => {
   try {
     const resp = await axios.get(`${config.baseUrl}/${name}`);
     const { data, status } = resp;
-
+    console.log(resp);
     if (status === 200) {
       // console.log(data);
       dispatch({
@@ -38,4 +38,9 @@ export const fetchPokemonDetail = name => async dispatch => {
       });
     }
   } catch (error) {}
+};
+
+export const catchPokemon = (item, name) => dispatch => {
+  console.log(name);
+  dispatch({ type: pokemonTypes.CATCH_POKEMON, payload: item, name: name });
 };

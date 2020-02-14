@@ -21,12 +21,23 @@ export const PokemonMoves = styled.ul`
   padding: 0;
 `;
 
-export const PokemonTypes = styled.div`
+export const PokemonPositionText = styled.div`
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const PokemonList = styled.div`
+  padding: 12px;
+  border-radius: 50%;
 `;
 
 export const PokemonMoveList = styled.li`
   font-size: 15px;
   list-style: none;
+`;
+
+export const AvatarWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;

@@ -12,7 +12,7 @@ const Header = () => {
     <HeaderContainer>
       <LogoContainer>{/* <Logo src={logo} /> */}</LogoContainer>
       <MenuContainer>
-        <MenuItem to='/'>Pokemmon List</MenuItem>
+        <MenuItem to='/'>Pokemon List</MenuItem>
         <MenuItem to='/my-pokemon'>My Pokemon</MenuItem>
       </MenuContainer>
     </HeaderContainer>

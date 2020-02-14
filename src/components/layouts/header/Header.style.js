@@ -7,9 +7,9 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
-  background-color: blue;
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
-    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  background-color: #ffcb07;
+  box-shadow: 0px 2px 4px -1px rgb(1, 106, 175),
+    0px 4px 5px 0px rgb(33, 56, 110), 0px 1px 10px 0px rgb(40, 97, 163);
 `;
 
 export const LogoContainer = styled.div`
