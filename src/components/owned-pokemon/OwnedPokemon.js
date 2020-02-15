@@ -25,7 +25,7 @@ const OwnedPokemon = ({ data }) => {
             <OwnedList key={pokemon.ownedName}>
               <OwnedImg src={pokemon.sprites.front_default} />
               <OwnedDescription>
-                <div><i>Nickname</i> {pokemon.ownedName}</div>
+                <OwnedName className="fbold fz20">{pokemon.ownedName}</OwnedName>
                 <OwnedName className="bg-orange cl-white">{pokemon.name}</OwnedName>
                 <div className="mt2">
                   <Button className="bg-red cl-white" title="Release " onClick={() => dispatch(releasePokemon(pokemon.ownedName))} />

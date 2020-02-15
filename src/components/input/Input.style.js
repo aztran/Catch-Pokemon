@@ -8,7 +8,6 @@ export const InputContainer = styled.div`
 export const InputBox = styled.input`
   background: none;
   background-color: white;
-  ${'' /* color: $sub-color; */}
   font-size: 18px;
   padding: 10px 10px 10px 5px;
   display: block;

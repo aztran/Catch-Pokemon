@@ -1,18 +1,13 @@
 import styled from 'styled-components';
 
 export const OwnedWrapper = styled.div`
-  ${'' /* display: flex;
-  justify-content: space-between;
-  flex-flow: column; */}
   background: white;
   overflow: auto;
   height: 80vh;
   display: block;
-  
 `;
 
 export const OwnedList = styled.div`
-  ${'' /* margin: 20px 0; */}
   display: flex;
   justify-content: space-between;
   align-items: center;

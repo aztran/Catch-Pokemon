@@ -110,13 +110,10 @@ const GlobalStyle = createGlobalStyle`
       color: black;
     }
 
-   
-
     @media (min-width: 600px) {
         .grid { grid-template-columns: repeat(2, 1fr); }
     }
 
-    /* Screen larger than 900px? 3 columns */
     @media (min-width: 900px) {
     .grid { grid-template-columns: repeat(4, 1fr); }
     }

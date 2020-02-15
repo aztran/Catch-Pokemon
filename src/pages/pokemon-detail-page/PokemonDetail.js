@@ -67,18 +67,18 @@ const PokemonDetail = ({ match, history }) => {
       return Math.floor(Math.random() * Math.floor(max));
     };
     // if (state.open) return;
-    setState({ ...state, open: true });
+    setState({ ...state, open: true, isCatch: false });
     if (getRandomInt(2) === 1) {
       setState({
         ...state,
         isCatch: true,
         open: false,
-        message: `Excellent Throw! ${pokemonSingle.name} was caught!`
+        // message: `Excellent Throw! ${pokemonSingle.name} was caught!`
       });
     }
-    setTimeout(() => {
-      // setState({ ...state, open: false });
-    }, 2000);
+    // setTimeout(() => {
+    //   setState({ ...state, open: false });
+    // }, 2000);
   };
 
   return (
@@ -91,11 +91,12 @@ const PokemonDetail = ({ match, history }) => {
             <PokemonName className='fz20'>
               {pokemonSingle.name.toUpperCase()}
             </PokemonName>
-            <ButtonPokemon onClick={() => throwPokeBall()}>Throw Ball</ButtonPokemon>
+
             <AvatarWrapper>
               <Avatar img={pokemonSingle.sprites.front_default} />
               <Avatar img={pokemonSingle.sprites.back_default} />
             </AvatarWrapper>
+            <ButtonPokemon onClick={() => throwPokeBall()}>Throw Ball</ButtonPokemon>
             {state.isCatch ? (
               <React.Fragment>
                 <Alert msg={`Excellent Throw! ${pokemonSingle.name} was caught!`} />

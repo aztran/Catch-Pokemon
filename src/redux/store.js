@@ -32,12 +32,7 @@ const enhanceMiddleware =
     : applyMiddleware(...middleWare);
 
 export const store = createStore(rootReducer, enhanceMiddleware);
-// sagaMiddleware.run(rootSaga);
-
-// export const store = createStore(rootReducer, applyMiddleware(...middlewares));
 
 export const persistor = persistStore(store);
-
-// export default store;
 
 export default { store, persistor };
